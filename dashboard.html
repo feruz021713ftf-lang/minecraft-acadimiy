@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Minecraft Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="app-page">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+      <a class="logo" href="index.html">
+        <span class="logo-block" aria-hidden="true"></span>
+        <span class="logo-text">Minecraft <em>Academy</em></span>
+      </a>
+      <nav class="side-nav">
+        <a class="side-link active" href="dashboard.html">Dashboard</a>
+        <a class="side-link" href="controls.html">Controls &amp; Inventory</a>
+        <a class="side-link" href="movement-combat.html">Movement &amp; Combat</a>
+        <a class="side-link" href="crafting.html">Crafting &amp; Enchanting</a>
+        <a class="side-link" href="secrets.html">Secrets &amp; Survival</a>
+        <hr />
+        <a class="side-link" href="achievements.html">Achievements</a>
+        <a class="side-link" href="leaderboard.html">Leaderboard</a>
+        <a class="side-link" href="profile.html">Profile</a>
+        <a class="side-link" href="settings.html">Settings</a>
+      </nav>
+      <button class="btn btn-ghost btn-block" id="logout-btn">Log out</button>
+    </aside>
+
+    <div class="app-main">
+      <header class="app-topbar">
+        <button class="nav-toggle" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="false">
+          <span class="sr-only">Toggle sidebar</span>
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <h1 class="app-title">Dashboard</h1>
+        <div class="topbar-user">
+          <span class="avatar small" aria-hidden="true"></span>
+          <span id="topbar-name">DemoPlayer</span>
+        </div>
+      </header>
+
+      <main class="app-content">
+        <!-- Welcome + progress -->
+        <section class="panel welcome-panel">
+          <div class="welcome-row">
+            <div class="avatar large" aria-hidden="true"></div>
+            <div class="welcome-text">
+              <p class="muted small">Welcome back</p>
+              <h2 id="welcome-name">DemoPlayer</h2>
+              <p class="rank-line">
+                <span class="rank-badge" id="rank-badge">Beginner</span>
+                <span class="muted">Level <span id="level-num">1</span></span>
+              </p>
+            </div>
+          </div>
+          <div class="xp-block">
+            <div class="xp-labels"><span id="xp-current">0 XP</span><span id="xp-next">500 XP</span></div>
+            <div class="xp-bar"><div class="xp-fill" id="xp-fill" style="width:0%"></div></div>
+            <p class="muted small" id="xp-hint">500 XP to Apprentice</p>
+          </div>
+        </section>
+
+        <!-- Continue learning -->
+        <section class="panel">
+          <h2 class="panel-title">Continue learning</h2>
+          <div id="continue-card" class="continue-card"></div>
+        </section>
+
+        <!-- Modules -->
+        <section class="panel">
+          <h2 class="panel-title">Your modules</h2>
+          <div class="card-grid four compact" id="modules-grid"></div>
+        </section>
+
+        <!-- Skills + quests -->
+        <div class="grid-2">
+          <section class="panel">
+            <h2 class="panel-title">Skill ratings</h2>
+            <ul class="skill-list" id="skill-list"></ul>
+          </section>
+          <section class="panel">
+            <h2 class="panel-title">Daily quests</h2>
+            <ul class="quest-list" id="quest-list"></ul>
+            <p class="micro-note">Demo quests — counters reset automatically each day.</p>
+          </section>
+        </div>
+
+        <!-- Activity + achievements -->
+        <div class="grid-2">
+          <section class="panel">
+            <h2 class="panel-title">Recent activity</h2>
+            <ul class="activity-list" id="activity-list"></ul>
+          </section>
+          <section class="panel">
+            <h2 class="panel-title">Achievements</h2>
+            <div class="ach-grid small" id="ach-highlights"></div>
+            <a class="link-arrow" href="achievements.html">View all →</a>
+          </section>
+        </div>
+
+        <!-- Weekly -->
+        <section class="panel">
+          <h2 class="panel-title">Weekly activity</h2>
+          <div class="week-chart" id="week-chart"></div>
+          <p class="micro-note">Sample data for demo purposes.</p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="js/i18n.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log in — Minecraft Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="auth-page">
+  <main class="auth-wrap">
+    <div class="auth-card">
+      <a class="logo" href="index.html">
+        <span class="logo-block" aria-hidden="true"></span>
+        <span class="logo-text">Minecraft <em>Academy</em></span>
+      </a>
+      <h1>Log in</h1>
+      <p class="muted">Demo authentication. Do not use a real password.</p>
+
+      <form id="login-form" class="form" novalidate>
+        <div class="field">
+          <label for="login-name">Display name</label>
+          <input id="login-name" name="name" type="text" autocomplete="username" required placeholder="DemoPlayer" />
+          <p class="field-error" data-error-for="login-name"></p>
+        </div>
+        <div class="field">
+          <label for="login-pin">Demo PIN (4 digits)</label>
+          <input id="login-pin" name="pin" type="text" inputmode="numeric" pattern="\d{4}" maxlength="4" required placeholder="1234" />
+          <p class="field-error" data-error-for="login-pin"></p>
+        </div>
+        <div class="form-status" role="status" aria-live="polite"></div>
+        <button class="btn btn-primary btn-block" type="submit">Log in</button>
+      </form>
+
+      <div class="auth-links">
+        <a href="register.html">Create demo account</a>
+        <a href="#" id="forgot-link">Forgot PIN?</a>
+      </div>
+
+      <div class="notice" id="forgot-notice" hidden>
+        <p><strong>Recovery not configured.</strong> This demo has no email server. Recovery would require a secure backend like Supabase. Please re-register with a new demo account.</p>
+      </div>
+
+      <a class="back-link" href="index.html">← Back to home</a>
+    </div>
+  </main>
+
+  <script type="module" src="js/i18n.js"></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
